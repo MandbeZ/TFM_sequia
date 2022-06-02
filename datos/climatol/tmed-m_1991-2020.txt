@@ -1,0 +1,112 @@
+
+HOMOGEN() APPLICATION OUTPUT  (From R's contributed package 'climatol' 3.1.1)
+
+=========== Homogenization of tmed-m, 1991-2020. (Tue Feb 22 23:05:13 2022)
+
+Parameters: varcli=tmed-m anyi=1991 anyf=2020 suf=NA nm=NA nref=10,10,4 std=3 swa=NA ndec=1 dz.max=6 dz.min=-5 wd=0,0,100 snht1=80 snht2=170 tol=0.02 maxdif=0.05 mxdif=0.05 maxite=999 force=FALSE wz=0.001 trf=0 mndat=NA gp=3 ini=NA na.strings=NA vmin=-20 vmax=NA nclust=100 cutlev=2.3 grdcol=#666666 mapcol=#666666 hires=TRUE expl=FALSE metad=FALSE sufbrk=m tinc=NA tz=UTC cex=1.2 verb=TRUE
+
+In 2 codes containing the "-" character, it has been changed to "_"
+Data matrix: 360 data x 15 stations
+
+NA's in similarity matrix: NO CLUSTER ANALYSIS
+
+Computing inter-station distances:  1  2  3  4  5  6  7  8  9  10  11  12  13  14
+
+
+========== STAGE 1 (SNHT on overlapping temporal windows) ===========
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+(No detected outliers)
+
+Performing shift analysis on the 15 series...
+
+
+========== STAGE 2 (SNHT on the whole series) =======================
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+(No detected outliers)
+
+Performing shift analysis on the 15 series...
+
+
+========== STAGE 3 (Final computation of all missing data) ==========
+
+Computing inter-station weights... (done)
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+
+The following lines will have one of these formats:
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+  Iteration Max.data.difference (Station_code)
+2 0.335 (114)
+3 0.262 (114)
+4 0.217 (114)
+5 0.181 (114)
+6 0.152 (114)
+7 0.127 (114)
+8 0.107 (114)
+9 0.095 (120)
+10 0.084 (120)
+11 0.075 (120)
+12 0.067 (120)
+13 -0.061 (113)
+14 -0.055 (113)
+15 0.051 (120)
+16 0.047 (120)
+
+Last series readjustment (please, be patient...)
+
+======== End of the homogenization process, after 7.28 secs 
+
+----------- Final computations:
+
+ACmx: Station maximum absolute autocorrelations of anomalies
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+ 0.4000  0.5650  0.6500  0.6255  0.7100  0.7400       4 
+
+SNHT: Standard normal homogeneity test (on anomaly series)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   2.80   10.60   28.10   37.53   53.80  127.40 
+
+RMSE: Root mean squared error of the estimated data
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.3980  0.8465  1.1419  1.2792  1.5551  2.4285 
+
+POD: Percentage of original data
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.00   12.00   21.00   33.33   47.50   99.00 
+
+   ACmx SNHT  RMSE POD Code Name       
+1  0.72  62.3 1.4  31  100  aeropuerto 
+2  0.40   8.0 0.8  12  101  andamarca  
+3  0.54  30.2 0.7  21  102  antequera  
+4    NA   2.8 0.8   3  107  corque     
+5  0.74  42.8 2.2  35  113  quillacas  
+6    NA   8.3 1.7  12  114  san_martin 
+7  0.53  28.1 0.4  14  115  soracachi  
+8  0.65  45.3 1.1  60  116  todo_santos
+9  0.66  14.0 1.1  23  117  toledo     
+10   NA  12.9 1.8   5  118  turco      
+11   NA   4.9 2.4   4  120  challapata 
+12 0.59  13.2 0.8  13  121  curahuara  
+13 0.74 127.4 1.4  86  200  achiri     
+14 0.61  93.6 1.1  99  203  calacoto   
+15 0.70  69.2 1.4  82  204  catacora   
+
+----------- Generated output files: -------------------------
+
+tmed-m_1991-2020.txt :  This text output 
+tmed-m_1991-2020_out.csv :  List of corrected outliers 
+tmed-m_1991-2020_brk.csv :  List of corrected breaks 
+tmed-m_1991-2020.pdf :  Diagnostic graphics 
+tmed-m_1991-2020.rda :  Homogenization results. Postprocess with (examples):
+   dahstat('tmed-m',1991,2020) #get averages in file tmed-m_1991-2020-me.csv 
+   dahstat('tmed-m',1991,2020,stat='tnd') #get OLS trends and their p-values 
+   dahgrid('tmed-m',1991,2020,grid=YOURGRID) #get homogenized grids 
+   ... (See other options in the package documentation)
+
