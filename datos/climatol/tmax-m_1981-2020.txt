@@ -1,0 +1,154 @@
+
+HOMOGEN() APPLICATION OUTPUT  (From R's contributed package 'climatol' 3.1.1)
+
+=========== Homogenization of tmax-m, 1981-2020. (Tue Feb 22 21:59:57 2022)
+
+Parameters: varcli=tmax-m anyi=1981 anyf=2020 suf=NA nm=NA nref=10,10,4 std=3 swa=NA ndec=1 dz.max=6 dz.min=-8 wd=0,0,100 snht1=80 snht2=170 tol=0.02 maxdif=0.05 mxdif=0.05 maxite=999 force=FALSE wz=0.001 trf=0 mndat=NA gp=3 ini=NA na.strings=NA vmin=-10 vmax=NA nclust=100 cutlev=2.3 grdcol=#666666 mapcol=#666666 hires=TRUE expl=FALSE metad=FALSE sufbrk=m tinc=NA tz=UTC cex=1.2 verb=TRUE
+
+In 2 codes containing the "-" character, it has been changed to "_"
+Data matrix: 480 data x 21 stations
+
+-------------------------------------------
+Stations in the 3 clusters:
+
+$`1`
+      Z Code       Name
+1  3702  100 aeropuerto
+2  3762  101  andamarca
+5  3867  106 choquecota
+15 3842  118      turco
+18 3880  200     achiri
+19 3888  201     ayoayo
+20 3826  203   calacoto
+
+$`2`
+      Z Code       Name
+3  4057  102  antequera
+6  3758  107     corque
+12 3802  115  soracachi
+14 4038  117     toledo
+16 3733  120 challapata
+17 3917  121  curahuara
+
+$`3`
+      Z Code         Name
+4  4025  105      chillca
+7  3906  108       cosapa
+8  3746  111  huachacalla
+9  3873  112 huayllamarca
+10 3724  113    quillacas
+11 3712  114   san_martin
+13 3805  116  todo_santos
+21 4253  204     catacora
+
+---------------------------------------------
+Computing inter-station distances:  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20
+
+
+========== STAGE 1 (SNHT on overlapping temporal windows) ===========
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+116(13) 2013-11-01: 31.3 -> 19.9 (6.56)
+
+Performing shift analysis on the 21 series...
+
+204(21) breaks at 2013-08-01 (84.3)
+
+
+Update number of series:  21 + 1 = 22 
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+(No detected outliers)
+
+Performing shift analysis on the 22 series...
+
+
+========== STAGE 2 (SNHT on the whole series) =======================
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+(No detected outliers)
+
+Performing shift analysis on the 22 series...
+
+
+========== STAGE 3 (Final computation of all missing data) ==========
+
+Computing inter-station weights... (done)
+
+Computation of missing data with outlier removal
+(Suggested data replacements are provisional)
+
+The following lines will have one of these formats:
+  Station(rank) Date: Observed -> Suggested (Anomaly, in std. devs.)
+  Iteration Max.data.difference (Station_code)
+2 0.452 (113)
+3 0.236 (113)
+4 0.145 (113)
+5 0.095 (113)
+6 0.065 (204-2)
+7 0.046 (204-2)
+
+Last series readjustment (please, be patient...)
+
+======== End of the homogenization process, after 9.04 secs 
+
+----------- Final computations:
+
+ACmx: Station maximum absolute autocorrelations of anomalies
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.2900  0.5150  0.6250  0.5968  0.6925  0.7600 
+
+SNHT: Standard normal homogeneity test (on anomaly series)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   2.30   13.30   24.00   37.78   63.77  141.00 
+
+RMSE: Root mean squared error of the estimated data
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.5945  1.1133  1.1878  1.3999  1.6800  2.8301 
+
+POD: Percentage of original data
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  13.00   17.25   45.50   46.55   64.75   99.00 
+
+   ACmx SNHT  RMSE POD Code  Name        
+1  0.70  81.7 1.2  97  100   aeropuerto  
+2  0.43  27.0 1.2  55  101   andamarca   
+3  0.49   8.1 0.7  15  102   antequera   
+4  0.67  16.0 1.7  60  105   chillca     
+5  0.62  51.4 1.1  32  106   choquecota  
+6  0.31   4.5 1.2  13  107   corque      
+7  0.75  85.3 2.8  55  108   cosapa      
+8  0.74  70.4 2.1  26  111   huachacalla 
+9  0.65  13.9 1.9  72  112   huayllamarca
+10 0.60  34.5 1.6  35  113   quillacas   
+11 0.46  25.9 1.7  65  114   san_martin  
+12 0.29   2.3 0.6  13  115   soracachi   
+13 0.63  67.2 1.6  70  116   todo_santos 
+14 0.60   3.1 0.7  15  117   toledo      
+15 0.45   4.1 1.2  14  118   turco       
+16 0.66  14.4 1.2  48  120   challapata  
+17 0.76  53.5 2.4  17  121   curahuara   
+18 0.59  22.1 1.1  64  200   achiri      
+19 0.74 141.0 1.1  98  201   ayoayo      
+20 0.60  70.9 0.9  99  203   calacoto    
+21 0.74  13.1 1.2  18  204   catacora    
+22 0.65  20.8 1.7  43  204-2 catacora-2  
+
+----------- Generated output files: -------------------------
+
+tmax-m_1981-2020.txt :  This text output 
+tmax-m_1981-2020_out.csv :  List of corrected outliers 
+tmax-m_1981-2020_brk.csv :  List of corrected breaks 
+tmax-m_1981-2020.pdf :  Diagnostic graphics 
+tmax-m_1981-2020.rda :  Homogenization results. Postprocess with (examples):
+   dahstat('tmax-m',1981,2020) #get averages in file tmax-m_1981-2020-me.csv 
+   dahstat('tmax-m',1981,2020,stat='tnd') #get OLS trends and their p-values 
+   dahgrid('tmax-m',1981,2020,grid=YOURGRID) #get homogenized grids 
+   ... (See other options in the package documentation)
+
